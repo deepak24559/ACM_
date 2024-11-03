@@ -1,0 +1,105 @@
+< <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+     
+    <style>
+html,body{
+    height: 100%;
+    width:  100%;
+} 
+
+.main{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */ 
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    height: 290px;
+    width: 230px; 
+    border: 2px,solid,black;
+    border-radius: 15px;
+}  
+
+#result{
+     margin-top: 10px;
+     padding: 5px;
+    height: 15px;
+    width: 250px;
+     
+
+} 
+
+.main2{
+    margin-top: 30px;
+}
+
+.button{
+     padding: 15px;
+     margin: 5px;
+     border-radius: 30%;
+}
+    </style>
+</head>
+<body>
+   <header class="head">
+    <div class="main">
+         
+        <div><span id="result"></span> </div>
+        <div class="main2">
+            <div class="row1">
+                <input type="button" class="button" onclick="insert('7')" value="7" >
+                <input type="button" class="button" onclick="insert('8')" value="8">
+                <input type="button" class="button" onclick="insert('9')" value="9">
+                <button type="button" class="button" onclick="insert('+')">+</button>
+            </div>
+            <div class="row2">
+                <input type="button" class="button" onclick="insert('4')" value="4">
+                <input type="button" class="button" onclick="insert('5')" value="5">
+                <input type="button" class="button" onclick="insert('6')" value="6">
+                <input type="button" class="button" value="-" onclick="insert('-')">
+            </div>
+            <div class="row3">
+                <input type="button" class="button" onclick="insert('1')" value="1">
+                <input type="button" class="button" onclick="insert('2')" value="2">
+                <input type="button" class="button" onclick="insert('3')" value="3">
+                <button type="button" class="button" onclick="insert('*')">*</button>
+            </div>
+            <div class="row4">
+                <button type="button" class="button" onclick="del()">C</button>
+                <input type="button" class="button" value="0" onclick="insert('0')">
+                <button type="button" class="button" onclick="calc()">=</button>
+                <button type="button" class="button" onclick="insert('/')">/</button>
+            </div>
+        </div>
+    </div>
+   </header> 
+   <script>
+    
+   const result = document.querySelector("#result")  
+
+function insert(val){
+    if (result==="0"){
+        result.textContent=0
+    } 
+    else;
+     result.textContent += val
+} 
+
+function calc(val){
+    result.textContent= eval(result.textContent)
+} 
+
+function del (val) {
+    result.textContent = ""
+}
+
+    
+   </script>
+</body>
+</html>
